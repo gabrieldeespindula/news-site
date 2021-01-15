@@ -47,13 +47,14 @@ endif;
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/adm.css">
         <title>Delete</title>
     </head>
     <body>
-        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
-        <label>VOCÊ TEM CERTEZA QUE DESEJA EXCLUIR " <?php echo $data['titulo'] ?> " </label>
-        <button id="btn" name="btn-delete" type="submit">SIM, EXCLUIR</button>
-        <button id="btn" name="btn-save" type="submit">NÃO, MANTER</button>
+        <form class="center padding" action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+        <h1 class="padding font-20">VOCÊ TEM CERTEZA QUE DESEJA EXCLUIR " <?php echo $data['titulo'] ?> " </h1>
+        <button style="margin-right: 10px;" class="button" id="btn" name="btn-delete" type="submit">SIM, EXCLUIR</button>
+        <button style="margin-left: 10px;" class="button" id="btn" name="btn-save" type="submit">NÃO, MANTER</button>
         </form>    
     </body>
 </html>

@@ -3,7 +3,8 @@
 // connection
 require_once 'database/dbconnectnews.php';
 
-$sql = "SELECT * FROM news ORDER BY Id DESC";
+$busca = mysqli_escape_string($connectnews, $_POST['busca']);
+$sql = "SELECT * FROM news WHERE titulo LIKE '%$busca%' ORDER BY Id DESC";
 $result = mysqli_query($connectnews, $sql);
 ?>
 <html lang="pt-br">
@@ -17,6 +18,7 @@ $result = mysqli_query($connectnews, $sql);
 
     <body>
     <?php include_once 'includes/header.php'; ?>
+    <p class="titulo" >Resultados da busca por: "<?php echo $busca; ?>"</p>
     <main>
         <div class="linha">
             <?php
@@ -42,9 +44,6 @@ $result = mysqli_query($connectnews, $sql);
             endwhile; ?>
         </div>
     <main>
-    <div class="vejamais">
-        <a href="allnews.php" >Veja mais notícias</a>
-    </div>
     <?php include_once 'includes/footer.php'; ?>
 
  

@@ -39,7 +39,7 @@ mysqli_close($connectlogin);
             endif;
             endif; ?>
 
-            <h1>Notícias no Banco de Dados</h1>
+            <a href="read.php" style="margin-right: 30px;" class="font-20 padding">Voltar para todas as notícias</a>
             <a class="font-20" href="./database/logout.php">SAIR</a>
             <form action="buscaread.php" class="padding form" method="POST">
                 <input placeholder="Busque Notícias" type="text" name="busca" />
@@ -49,7 +49,8 @@ mysqli_close($connectlogin);
         <main class="center list" >
 
             <?php
-            $sql = "SELECT * FROM news ORDER BY Id DESC";
+            $busca = mysqli_escape_string($connectnews, $_POST['busca']);
+            $sql = "SELECT * FROM news WHERE titulo LIKE '%$busca%' ORDER BY Id DESC";
             $result = mysqli_query($connectnews, $sql);
 
             while ($data = mysqli_fetch_array($result)):

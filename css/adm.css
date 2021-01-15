@@ -1,0 +1,43 @@
+.center{
+    text-align: center;
+}
+.padding{
+    padding: 10px;
+}
+.font-20{
+    font-size: 20px;
+}
+.button{
+    padding: 10px;
+    font-size: 20px;
+}
+
+.list {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 2px solid  #686868;
+    position: relative;
+}
+
+.titulos {
+    font-size: 20px;
+    text-decoration: none;
+    color: #242424;;
+}
+
+.titulo-input {
+    width: 100%;
+}
+
+.form input {
+    height: 30px;
+    padding: 10px;
+    width: 190px;
+    margin-top: 15px;
+}
+
+.form button {
+    padding: 16px;
+}
