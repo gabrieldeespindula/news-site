@@ -18,7 +18,7 @@ $result = mysqli_query($connectnews, $sql);
     <body>
     <?php include_once 'includes/header.php'; ?>
     <main>
-        <div class="linha">
+        <div class="linhaall">
             <?php
             $count = 1;
             while ($data = mysqli_fetch_array($result)):
@@ -30,21 +30,19 @@ $result = mysqli_query($connectnews, $sql);
             </div>
             <?php
             $count ++;
-            if($count == 4):
+            if($count == 6):
             ?>
         </div>
         <div class="linha">
             <?php $count = 1;
             endif;
-            if($count == 10):
+            if($count == 26):
                 break;
             endif;
             endwhile; ?>
         </div>
     <main>
-    <div class="vejamais">
-        <a href="allnews.php" >Veja mais notícias</a>
-    </div>
+
     <?php include_once 'includes/footer.php'; ?>
 
  

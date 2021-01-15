@@ -23,6 +23,7 @@ function clear($input){
 $id = $_GET['id'];
 $titulo = clear($_POST['tituloedit']);
 $texto = clear($_POST['textoedit']);
+date_default_timezone_set('America/Sao_Paulo');
 $data = date('d-m-Y H:i');
 
 

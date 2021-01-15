@@ -16,6 +16,22 @@ body {
     position: relative;
 }
 
+.header-2 {
+    padding: 15px;
+    margin: 0 auto;
+    width: 980px;
+    position: relative;
+    border-bottom: 2px solid #ebebeb;
+}
+
+.header-2 a {
+    margin-right: 110px;
+    margin-left: 110px;
+    color: #242424;
+    text-decoration:none;
+    font-size: 23px;
+}
+
 .logo {
     float: left;
     width: 40%;
@@ -32,7 +48,96 @@ body {
     padding: 10px;
     width: 190px;
     margin-top: 49px;
-    background-position: 96%;
     border: 1px solid #d6d6d6;
 }
 
+.linha {
+    margin: 0 auto;
+    width: 980px;
+    margin-left: 450px;
+    position: relative;
+    display: inline-flex;
+    
+}
+
+.linhaall {
+    margin: 0 auto;
+    margin-left: 150px;
+    margin-right: 150px;
+    position: relative;
+    display: inline-flex;
+}
+
+.noticia {
+    margin-top: 15px;
+    padding: 15px;
+    margin-left: 30px;
+    border: 2px solid #ebebeb;
+    text-align: center;
+    text-transform: capitalize;
+    width: 250px;
+    height: 350px;
+}
+
+.noticia a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #242424;
+}
+
+.vejamais {
+    padding: 15px;
+    margin: 0 auto;
+    width: 980px;
+    position: relative;
+    border-bottom: 2px solid #ebebeb;
+    border-top: 2px solid #ebebeb;
+    font-size: 20px;
+}
+.vejamais a {
+    padding-left: 420px;
+    text-decoration: none;
+    color: #242424;
+}
+
+.redes {
+    padding: 30px;
+}
+
+.redes a {
+    margin: 20px;
+    color: #242424;
+    text-decoration:none;
+    font-size: 20px;
+}
+
+footer {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #ebebeb;
+    height: 150px;
+}
+
+.titulo {
+    padding: 30px;
+    text-align: center;
+}
+
+.data {
+    text-align: center;
+}
+
+.texto {
+    text-align: left;
+    margin-left: 15em;
+    margin-right: 15em;
+    font-size: 20px;
+}
+
+.img {
+    text-align: center;
+}
+
+.btn-busca {
+    padding: 16px;
+}

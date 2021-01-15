@@ -23,6 +23,7 @@ function clear($input){
 
 $titulo = clear($_POST['titulo']);
 $texto = clear($_POST['texto']);
+date_default_timezone_set('America/Sao_Paulo');
 $data = date('d-m-Y H:i');
 
 $img = base64_encode(file_get_contents(addslashes($_FILES['img']['tmp_name'])));

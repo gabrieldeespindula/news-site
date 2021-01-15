@@ -46,14 +46,15 @@ endif;
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/adm.css">
 
         <title>Login</title>
 
 
     </head>
 
-    <body>
-        <h1> Login </h1>
+    <body class="center">
+        <h1 class="padding"> Login </h1>
 
         <?php
         if(!empty($errors)):
@@ -63,12 +64,17 @@ endif;
         endif;
         ?>
 
-        <hr>
 
         <form action="" method="POST">
-        Login: <input type="text" name="login"><br>
-        Password: <input type="password" name="password"><br>
-        <button type="submit" name="button-login"> Log In </button>
+            <div class="padding">
+                <label for="login" class="font-20">Login:</label>
+                <input class="padding font-20" type="text" name="login" id="login"><br>
+            </div>
+            <div class="padding">
+                <label for="password" class="font-20">Password:</label>
+                <input class="padding font-20" type="password" name="password" id=password><br>
+            </div>
+        <button class="padding font-20" type="submit" name="button-login"> Log In </button>
         </form>
 
     </body>
