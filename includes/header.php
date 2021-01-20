@@ -15,14 +15,14 @@
                     <a class="nav-link" href="allnews.php" >Notícias</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#footer" >Vídeos</a>
+                    <a class="nav-link" href="index.php#videos" >Vídeos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#redes" >Redes Sociais</a>
                 </li>
             </ul>
-            <form class="form-inline">
-                <input class="form-control ml-2 mr-2" type="search" placeholder="Busque por notícias">
+            <form action="busca.php" class="form-inline" method="POST">
+                <input class="form-control ml-2 mr-2" name="busca" type="search" placeholder="Busque por notícias">
                 <button class="btn btn-dark" type="submit">Buscar</button>
             </form>
         </div>

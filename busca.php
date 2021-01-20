@@ -22,30 +22,34 @@ $result = mysqli_query($connectnews, $sql);
         <script src="node_modules/popper.js/dist/umd/popper.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <?php include_once 'includes/header.php'; ?>
-    <p>Resultados da busca por: "<?php echo $busca; ?>"</p>
     <main>
-        <div>
-            <?php
-            $count = 1;
-            while ($data = mysqli_fetch_array($result)):
-            ?>
-            <div>
-                <a href="readnews.php?id=<?php echo $data['Id'] ?>"><?php echo '<img height="250px" width="250px" src=data:image;base64,'.$data['img'].' />'; ?></a>
-                <a href="readnews.php?id=<?php echo $data['Id'] ?>"><?php echo $data['titulo'] ?></a>
-                <p><?php echo $data['data'] ?><p>
+    <div class="container">
+            <div class="row justify-content-center">
+                <h6 class="text-center mt-5">Resultados da busca por: "<?php echo $busca; ?>"</h6>
             </div>
-            <?php
-            $count ++;
-            if($count == 4):
-            ?>
-        </div>
-        <div>
-            <?php $count = 1;
-            endif;
-            if($count == 10):
-                break;
-            endif;
-            endwhile; ?>
+            <div class="row w-100">
+                <?php
+                $count = 1;
+                $countwo = 1;
+                while ($data = mysqli_fetch_array($result)):
+                ?>
+                <div class="card mx-auto my-5">
+                    <a href="readnews.php?id=<?php echo $data['Id'] ?>"><?php echo '<img class="rounded img-fluid" height="300px" width="300px" src=data:image;base64,'.$data['img'].' />'; ?></a>
+                    <div class="card-body text-center">
+                        <a class="h6 card-text" href="readnews.php?id=<?php echo $data['Id'] ?>"><?php echo $data['titulo'] ?></a>
+                        <h6 class="card-subtitle my-2 text-muted"><?php echo $data['data'] ?><h6>
+                    </div>
+                </div>
+                <?php
+                $count ++;
+                if($count == 4):
+                ?>
+            </div>
+            <div class="row">
+                <?php $count = 1;
+                endif;
+                endwhile; ?>
+            </div>
         </div>
     <main>
     <?php include_once 'includes/footer.php'; ?>

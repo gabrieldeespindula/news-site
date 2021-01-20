@@ -67,10 +67,11 @@ $result = mysqli_query($connectnews, $sql);
                 <span class="carousel-control-next-icon"></span>
                 <span class="sr-only">Avançar</span>
             </a>
-        
+        </div>
+    
         <div class="container">
             <div class="row justify-content-center">
-                <h1 class="text-center mt-5">Ultimas Notícias</h1>
+                <h1 class="text-center mt-5"><i class="fa fa-newspaper-o text-danger" aria-hidden="true"></i>  Ultimas Notícias</h1>
             </div>
             <div class="row w-100">
                 <?php
@@ -99,8 +100,39 @@ $result = mysqli_query($connectnews, $sql);
                 endwhile; ?>
             </div>
         </div>
-        <div class="text-center">
+
+        <div class="text-center mb-5">
             <a href="allnews.php" class="btn btn-outline-danger">Veja mais notícias</a>
+        </div>
+
+        <div class="jumbotron jumbotron-fluid"  id="videos">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h1><i class="fa fa-video-camera text-danger" aria-hidden="true"></i>  Vídeos</h1>
+                        <p class="lead">Confira o último vídeo do canal Notícia Top abaixo.</p>
+                    </div>
+                </div>
+                <div class="col-sm-12"><hr></div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12  mt-3">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="rounded embed-responsive-item" src="https://www.youtube.com/embed/GuUYX8MZcBc" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="row mt-3 justify-content-center ">
+                            <h4>Notícia Top:  Adobe Flash Player Acabou!</h4>
+                        </div>
+                        <div class="row mt-3 justify-content-center ">
+                            <p>Descrição: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque congue est non porttitor. Donec aliquam at mi vitae luctus. Cras sed tincidunt quam. Mauris purus mauris, dapibus et tincidunt et, eleifend in dolor. Donec a ipsum eget elit ultrices efficitur. Ut ut vulputate lacus, vitae finibus risus. Praesent mattis varius est, eu rutrum tortor porttitor vitae.</p>
+                        </div>
+                        <div class="row mt-3 mb-0 justify-content-center ">
+                            <a href="https://www.youtube.com/channel/UCs8iHeBdrQYS4x_Scu-X6yg/videos" class="btn btn-outline-danger">Veja mais vídeos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="container">
