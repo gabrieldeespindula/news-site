@@ -11,21 +11,25 @@ $result = mysqli_query($connectnews, $sql);
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet"  type="text/css" href="./css/index.css">
+        <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
+        <link rel="stylesheet" href="node_modules/bootstrap/compiler/style.css">
 
         <title>Notícia Top</title>
     </head>
 
     <body>
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <?php include_once 'includes/header.php'; ?>
-    <p class="titulo" >Resultados da busca por: "<?php echo $busca; ?>"</p>
+    <p>Resultados da busca por: "<?php echo $busca; ?>"</p>
     <main>
-        <div class="linha">
+        <div>
             <?php
             $count = 1;
             while ($data = mysqli_fetch_array($result)):
             ?>
-            <div class="noticia">
+            <div>
                 <a href="readnews.php?id=<?php echo $data['Id'] ?>"><?php echo '<img height="250px" width="250px" src=data:image;base64,'.$data['img'].' />'; ?></a>
                 <a href="readnews.php?id=<?php echo $data['Id'] ?>"><?php echo $data['titulo'] ?></a>
                 <p><?php echo $data['data'] ?><p>
@@ -35,7 +39,7 @@ $result = mysqli_query($connectnews, $sql);
             if($count == 4):
             ?>
         </div>
-        <div class="linha">
+        <div>
             <?php $count = 1;
             endif;
             if($count == 10):

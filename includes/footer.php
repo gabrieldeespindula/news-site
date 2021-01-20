@@ -1,13 +1,26 @@
-<footer id="footer">
-    <div class="header-1">
-        <div class="logo">
-            <a href="index.php"><img src="./img/logo.png" /></a>
+<div class="col"><hr></div>
+<div class="row w-100 p-3">
+    <div class="col-sm-4">
+        <h3>Notcícia Top</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et consectetur lacus, id viverra magna.</p>
+        <p> Fusce a auctor tortor, ut dictum ligula. Fusce vitae fringilla metus. Suspendisse non vulputate nulla.</p>
+    </div>
+    <div class="col-sm-4">
+        <h3>Menu</h3>
+        <div class="list-group text-center">
+            <a class="list-group-item list-group-action list-group-item-danger" href="#header" >Início</a>
+            <a class="list-group-item list-group-action list-group-item-danger" href="allnews.php" >Notícias</a>
+            <a class="list-group-item list-group-action list-group-item-danger" href="#footer" >Vídeos</a>
+            <a class="list-group-item list-group-action list-group-item-danger" href="#footer" >Redes Sociais</a>
+        </div>
+    </div>  
+    <div id="redes" class="col-sm-4">
+    <h3>Menu</h3>
+        <div class="btn-group-vertical btn-block btn-group-lg" role="group" >
+            <a class="btn btn-outline-primary" href="#" ><i class="fa fa-facebook-f" aria-hidden="true"></i>  Facebook</a>
+            <a class="btn btn-outline-info" href="#" ><i class="fa fa-twitter" aria-hidden="true"></i>  Twitter</a>
+            <a class="btn btn-outline-warning" href="#" ><i class="fa fa-instagram" aria-hidden="true"></i>  Instagram</a>
         </div>
     </div>
-    <div class="busca redes">
-        <a href="">Facebook</a><br>
-        <a href="">Intagram</a><br>
-        <a href="">WhatsApp</a><br>
-        <a href="">Email</a>
-    </div>
-</footer>
+</div>
+
