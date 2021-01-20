@@ -4,7 +4,7 @@ session_start();
 
 // verification
 if(!isset($_SESSION['logged'])):
-    header ('location: ../adm.php');
+    header ('location: ../adm/adm.php');
 endif;
 
 // connection
@@ -30,14 +30,14 @@ if(isset($_POST['btn-delete'])):
 
     if (mysqli_query($connectnews, $sql)):
         $_SESSION['msg'] = "Deleted successfully";
-        header('Location: ../read.php');
+        header('Location: ../adm/read.php');
     else: 
         $_SESSION['msg'] = "Error in deleting";
-        header('Location: ../read.php');
+        header('Location: ../adm/read.php');
     endif;
 endif;
 if(isset($_POST['btn-save'])):
-    header('Location: ../read.php');
+    header('Location: ../adm/read.php');
 endif;
 
 ?>

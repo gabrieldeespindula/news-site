@@ -1,16 +1,30 @@
-<header class="menu-principal">
-    <div class="header-1">
-        <div class="logo">
-            <a href="index.php"><img src="./img/logo.png" /></a>
+<nav id="header" class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container">
+        <a class="navbar-brand h1 mb-0" href="index.php">Notícia Top</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+            <spam class="navbar-toggler-icon" ></spam>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSite">
+            <ul class="navbar-nav my-3 mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php" >Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="allnews.php" >Notícias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php#videos" >Vídeos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#redes" >Redes Sociais</a>
+                </li>
+            </ul>
+            <form action="busca.php" class="form-inline" method="POST">
+                <input class="form-control ml-2 mr-2" name="busca" type="search" placeholder="Busque por notícias">
+                <button class="btn btn-dark" type="submit">Buscar</button>
+            </form>
         </div>
-        <form action="busca.php" class="busca" method="POST">
-            <input placeholder="Busque no Top Notícias" type="text" name="busca" />
-            <button class="btn-busca" type="submit" >Buscar</button>
-        </form>
     </div>
-</header>
-<div class="header-2">
-    <a href="index.php" >Início</a>
-    <a href="allnews.php" >Notícias</a>
-    <a href="#footer" >Fale Conosco</a>
-</div>
+</nav>
