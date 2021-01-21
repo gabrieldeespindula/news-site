@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 // connecting
 require_once '../database/dbconnectlogin.php';
@@ -8,62 +9,76 @@ session_start();
 
 // verification
 if(!isset($_SESSION['logged'])):
-    header ('Location: adm.php');
+    header ('Location: index.php');
 endif;
 
-//data
-$id = $_SESSION['id_user'];
-$sql = "SELECT * FROM news WHERE Id = '$id'";
-$result = mysqli_query($connectlogin, $sql);
-$data = mysqli_fetch_array($result);
-mysqli_close($connectlogin);
 ?>
 
-<!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Read</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/compiler/bootstrap.css">
+        <link rel="stylesheet" href="../style/css/style.css">
+        <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.css">
+        <title>Busca</title>
 
     </head>
     <body>
-        <header>
-            <?php 
-            if (count($_SESSION) > 2): 
-                if($_SESSION['msg'] != "0"):
-            ?>
-            <p> <?php echo $_SESSION['msg']; ?></p>
-            <?php $_SESSION['msg'] = "0";
-            endif;
-            endif; ?>
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/popper.js/dist/umd/popper.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <?php 
+        if (count($_SESSION) > 2): 
+            if($_SESSION['msg'] != "0"):
+        ?>
+        <p> <?php echo $_SESSION['msg']; ?></p>
+        <?php $_SESSION['msg'] = "0";
+        endif;
+        endif; ?>
 
-            <a href="read.php">Voltar para todas as notícias</a>
-            <a href="../database/logout.php">SAIR</a>
-            <form action="buscaread.php" method="POST">
-                <input placeholder="Busque Notícias" type="text" name="busca" />
-                <button type="submit" >Buscar</button>
-            </form>
-        </header>
-        <main >
-
-            <?php
-            $busca = mysqli_escape_string($connectnews, $_POST['busca']);
-            $sql = "SELECT * FROM news WHERE titulo LIKE '%$busca%' ORDER BY Id DESC";
-            $result = mysqli_query($connectnews, $sql);
-
-            while ($data = mysqli_fetch_array($result)):
-            ?>
-
-            <div>
-                <a href="edit.php?id=<?php echo $data['Id']; ?>"><p><?php echo $data['titulo']; ?></p></a>
-            </div>
-
-            <?php endwhile; ?>
-        </main>
-        <div >
-            <a href="add.php"><button class="button">ADICIONE NOVAS NOTÍCIAS</button></a>
+        <div class="my-3 w-100 row justify-content-center">
+            <a class="btn btn-outline-info" href="read.php">VOLTAR</a>
         </div>
+        <div class="col-md-12 w-100">
+            <div class="row justify-content-center">
+                <div class="col-md-4 my-auto">
+                    <div class="row justify-content-center">
+                        <form action="buscaread.php" class="form-inline" method="POST">
+                            <input placeholder="Busque Notícias" type="search" class="form-control" name="busca" />
+                            <button type="submit" class="ml-2 btn btn-dark" >Buscar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4 my-auto">
+                    <h1 class="text-center"><i class="fa fa-search text-danger" aria-hidden="true"></i>  BUSCA</h1>
+                </div>
+                <div class="col-md-4 my-auto">
+                    <div class="row justify-content-center">
+                        <a href="add.php"><button class="btn btn-outline-danger">Adicionar</button></a>
+                    </div>  
+                </div>
+            </div>
+            <div class="row w-100">
+                <?php
+                $busca = mysqli_escape_string($connectnews, $_POST['busca']);
+                $sql = "SELECT * FROM news WHERE titulo LIKE '%$busca%' ORDER BY Id DESC";
+                $result = mysqli_query($connectnews, $sql);
 
+                while ($data = mysqli_fetch_array($result)):
+                ?>
+                <div class="card mx-auto my-5">
+                    <div class="card-body text-center">
+                        <a href="edit.php?id=<?php echo $data['Id'] ?>"><?php echo '<img class="rounded img-fluid" height="250px" width="250px" src=data:image;base64,'.$data['img'].' />'; ?></a>
+                    </div>
+                    <div class="card-body text-center">
+                        <a class="h6 card-text" href="edit.php?id=<?php echo $data['Id'] ?>"><?php echo $data['titulo'] ?></a>
+                        <h6 class="card-subtitle my-2 text-muted"><?php echo $data['data'] ?><h6>
+                    </div>
+                </div>
+                <?php
+                endwhile; ?>
+            </div>
+        </div>
     </body>
 </html>

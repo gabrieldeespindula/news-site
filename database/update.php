@@ -4,7 +4,7 @@ session_start();
 
 // verification
 if(!isset($_SESSION['logged'])):
-    header ('location: ../adm/adm.php');
+    header ('location: ../adm/index.php');
 endif;
 
 // connection

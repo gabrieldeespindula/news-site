@@ -34,7 +34,9 @@ $result = mysqli_query($connectnews, $sql);
                 while ($data = mysqli_fetch_array($result)):
                 ?>
                 <div class="card mx-auto my-5">
-                    <a href="readnews.php?id=<?php echo $data['Id'] ?>"><?php echo '<img class="rounded img-fluid" height="300px" width="300px" src=data:image;base64,'.$data['img'].' />'; ?></a>
+                    <div class="card-body text-center">
+                        <a href="readnews.php?id=<?php echo $data['Id'] ?>"><?php echo '<img class="rounded img-fluid" height="250px" width="250px" src=data:image;base64,'.$data['img'].' />'; ?></a>
+                    </div>
                     <div class="card-body text-center">
                         <a class="h6 card-text" href="readnews.php?id=<?php echo $data['Id'] ?>"><?php echo $data['titulo'] ?></a>
                         <h6 class="card-subtitle my-2 text-muted"><?php echo $data['data'] ?><h6>

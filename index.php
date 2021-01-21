@@ -68,32 +68,27 @@ $result = mysqli_query($connectnews, $sql);
                 <span class="sr-only">Avançar</span>
             </a>
         </div>
-    
+        
         <div class="container">
             <div class="row justify-content-center">
                 <h1 class="text-center mt-5"><i class="fa fa-newspaper-o text-danger" aria-hidden="true"></i>  Ultimas Notícias</h1>
             </div>
             <div class="row w-100">
                 <?php
-                $count = 1;
                 $countwo = 1;
                 while ($data = mysqli_fetch_array($result)):
                 ?>
                 <div class="card mx-auto my-5">
-                    <a href="readnews.php?id=<?php echo $data['Id'] ?>"><?php echo '<img class="rounded img-fluid" height="300px" width="300px" src=data:image;base64,'.$data['img'].' />'; ?></a>
+                    <div class="card-body text-center">
+                        <a href="readnews.php?id=<?php echo $data['Id'] ?>"><?php echo '<img class="rounded img-fluid" height="350px" width="350px" src=data:image;base64,'.$data['img'].' />'; ?></a>
+                    </div>
                     <div class="card-body text-center">
                         <a class="h6 card-text" href="readnews.php?id=<?php echo $data['Id'] ?>"><?php echo $data['titulo'] ?></a>
                         <h6 class="card-subtitle my-2 text-muted"><?php echo $data['data'] ?><h6>
                     </div>
                 </div>
                 <?php
-                $count ++;
-                if($count == 4):
-                ?>
-            </div>
-            <div class="row">
-                <?php $count = 1;
-                endif;
+                $countwo ++;
                 if($countwo == 7):
                     break;
                 endif;
