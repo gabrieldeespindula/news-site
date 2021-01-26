@@ -21,6 +21,7 @@ $result = mysqli_query($connectnews, $sql);
         <script src="node_modules/jquery/dist/jquery.js"></script>
         <script src="node_modules/popper.js/dist/umd/popper.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="js/index.js"></script>
         <script>
             $(function () {
                 $('[data-toggle="popover"]').popover()
@@ -69,42 +70,26 @@ $result = mysqli_query($connectnews, $sql);
             </a>
         </div>
         
-        <div class="container">
+        <div class="container" id="noticiashf">
             <div class="row justify-content-center">
-                <h1 class="text-center mt-5"><i class="fa fa-newspaper-o text-danger" aria-hidden="true"></i>  Ultimas Notícias</h1>
+                <h1 class="text-center mt-5"><i class="fa fa-newspaper-o text-info" aria-hidden="true"></i>  Ultimas Notícias</h1>
             </div>
-            <div class="row w-100">
-                <?php
-                $countwo = 1;
-                while ($data = mysqli_fetch_array($result)):
-                ?>
-                <div class="card mx-auto my-5">
-                    <div class="card-body text-center">
-                        <a href="readnews.php?id=<?php echo $data['Id'] ?>"><?php echo '<img class="rounded img-fluid" height="350px" width="350px" src=data:image;base64,'.$data['img'].' />'; ?></a>
-                    </div>
-                    <div class="card-body text-center">
-                        <a class="h6 card-text" href="readnews.php?id=<?php echo $data['Id'] ?>"><?php echo $data['titulo'] ?></a>
-                        <h6 class="card-subtitle my-2 text-muted"><?php echo $data['data'] ?><h6>
-                    </div>
+            <div class="col-sm-12 text-center">
+                <div class="row w-100 justify-content-center noticia ml-0">
+
                 </div>
-                <?php
-                $countwo ++;
-                if($countwo == 7):
-                    break;
-                endif;
-                endwhile; ?>
             </div>
         </div>
 
         <div class="text-center mb-5">
-            <a href="allnews.php" class="btn btn-outline-danger">Veja mais notícias</a>
+            <button type="button" onclick="vejaMais()" class="btn btn-outline-info">Veja mais notícias</button>
         </div>
 
         <div class="jumbotron jumbotron-fluid"  id="videos">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 text-center">
-                        <h1><i class="fa fa-video-camera text-danger" aria-hidden="true"></i>  Vídeos</h1>
+                        <h1><i class="fa fa-video-camera text-info" aria-hidden="true"></i>  Vídeos</h1>
                         <p class="lead">Confira o último vídeo do canal Notícia Top abaixo.</p>
                     </div>
                 </div>
@@ -117,13 +102,13 @@ $result = mysqli_query($connectnews, $sql);
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <div class="row mt-3 justify-content-center ">
-                            <h4>Notícia Top:  Adobe Flash Player Acabou!</h4>
+                            <h4 class="p-2">Notícia Top:  Adobe Flash Player Acabou!</h4>
                         </div>
-                        <div class="row mt-3 justify-content-center ">
-                            <p>Descrição: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque congue est non porttitor. Donec aliquam at mi vitae luctus. Cras sed tincidunt quam. Mauris purus mauris, dapibus et tincidunt et, eleifend in dolor. Donec a ipsum eget elit ultrices efficitur. Ut ut vulputate lacus, vitae finibus risus. Praesent mattis varius est, eu rutrum tortor porttitor vitae.</p>
+                        <div class="row mt-3 justify-content-center">
+                            <p class="p-2">Descrição: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque congue est non porttitor. Donec aliquam at mi vitae luctus. Cras sed tincidunt quam. Mauris purus mauris, dapibus et tincidunt et, eleifend in dolor. Donec a ipsum eget elit ultrices efficitur. Ut ut vulputate lacus, vitae finibus risus. Praesent mattis varius est, eu rutrum tortor porttitor vitae.</p>
                         </div>
                         <div class="row mt-3 mb-0 justify-content-center ">
-                            <a href="https://www.youtube.com/channel/UCs8iHeBdrQYS4x_Scu-X6yg/videos" class="btn btn-outline-danger">Veja mais vídeos</a>
+                            <a href="https://www.youtube.com/channel/UCs8iHeBdrQYS4x_Scu-X6yg/videos" class="btn btn-outline-info">Veja mais vídeos</a>
                         </div>
                     </div>
                 </div>
@@ -131,10 +116,8 @@ $result = mysqli_query($connectnews, $sql);
         </div>
 
         <div class="container">
-            <div class="row">
-                <div class="col-12 text-center my-5">
-                    <h1 class=""><i class="fa fa-bell text-danger" aria-hidden="true"></i> Receba Notificações</h1>
-                </div>
+            <div class="row justify-content-center my-5">
+                <h1><i class="fa fa-bell text-info" aria-hidden="true"></i> Receba Notificações</h1>
             </div>
             <div class="row justify-content-center mb-5">
                 <div class="col-sm-12 col-md-10 col-lg-8">
@@ -201,7 +184,7 @@ $result = mysqli_query($connectnews, $sql);
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-sm-12">
-                                    <button type="submit" class="btn btn-danger">Enviar</button>
+                                    <button type="submit" class="btn btn-info">Enviar</button>
                                     <a tabindex="0" class="btn btn-secondary ml-2" role="button" data-toggle="popover" data-placement="right" data-trigger="focus" title="Receba Notificações" data-content="Sempre que houver uma nova notícia receba mensagem no WhatsApp ou email com o link acesso." >Ajuda</a>
                                 </div>
                             </div>

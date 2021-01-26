@@ -1,4 +1,4 @@
-<nav id="header" class="navbar navbar-expand-lg navbar-dark bg-danger">
+<nav id="header" class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
     <div class="container">
         <a class="navbar-brand h1 mb-0" href="index.php">Notícia Top</a>
 
@@ -12,7 +12,7 @@
                     <a class="nav-link" href="index.php" >Início</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="allnews.php" >Notícias</a>
+                    <a class="nav-link" href="index.php#noticiashf" >Notícias</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php#videos" >Vídeos</a>
