@@ -87,8 +87,8 @@ endif;
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-sm-12">
-                                    <button type="submit" class="btn btn-danger" name="button-login">Entrar</button>
+                                <div class="form-group text-center mt-3 col-sm-12">
+                                    <button type="submit" class="btn btn-info" name="button-login">Entrar</button>
                                 </div>
                             </div>
                         </form>

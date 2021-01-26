@@ -56,11 +56,11 @@ mysqli_close($connectlogin);
                     </div>
                 </div>
                 <div class="col-md-4 my-auto">
-                    <h1 class="text-center"><i class="fa fa-newspaper-o text-danger" aria-hidden="true"></i>  Notícias no Banco de Dados</h1>
+                    <h1 class="text-center"><i class="fa fa-newspaper-o text-info" aria-hidden="true"></i>  Notícias no Banco de Dados</h1>
                 </div>
                 <div class="col-md-4 my-auto">
                     <div class="row justify-content-center">
-                        <button class="btn btn-outline-danger" data-toggle="modal" data-target="#modalAdicionar" >Adicionar</button>
+                        <button class="btn btn-outline-info" data-toggle="modal" data-target="#modalAdicionar" >Adicionar</button>
                     </div>
                 </div>
             </div>

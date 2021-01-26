@@ -36,7 +36,7 @@ $data = mysqli_fetch_array($result);
     <div class="container">
             <div class="row">
                 <div class="col-12 text-center my-5">
-                    <h1 class=""><i class="fa fa-edit text-danger" aria-hidden="true"></i>  Edite Esta Notícia</h1>
+                    <h1 class=""><i class="fa fa-edit text-info" aria-hidden="true"></i>  Edite Esta Notícia</h1>
                 </div>
             </div>
             <div class="row justify-content-center mb-5">
