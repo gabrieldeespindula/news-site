@@ -25,7 +25,6 @@ mysqli_close($connectlogin);
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../node_modules/bootstrap/compiler/bootstrap.css">
-        <link rel="stylesheet" href="../style/css/style.css">
         <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.css">
         <title>Read</title>
 
@@ -61,7 +60,7 @@ mysqli_close($connectlogin);
                 </div>
                 <div class="col-md-4 my-auto">
                     <div class="row justify-content-center">
-                        <a href="add.php"><button class="btn btn-outline-danger">Adicionar</button></a>
+                        <button class="btn btn-outline-danger" data-toggle="modal" data-target="#modalAdicionar" >Adicionar</button>
                     </div>
                 </div>
             </div>
@@ -83,6 +82,48 @@ mysqli_close($connectlogin);
                 </div>
                 <?php
                 endwhile; ?>
+            </div>
+        </div>
+        <div class="modal fade" id="modalAdicionar" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Adicione Uma Notícia</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <spam>&times;</spam>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                            <form action="../database/create.php" method="POST" enctype="multipart/form-data">
+                            <div class="form-row">
+                                <div class="form-group col-sm-12">
+                                    <label for="titulo">Título</label>
+                                    <input type="text" class="form-control" name="titulo" id="titulo" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-sm-12">
+                                    <label for="texto">Texto</label>
+                                    <textarea rows="10" name="texto" class="form-control" id="texto" required></textarea>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-sm-12">
+                                    <label for="texto">Imagem</label>
+                                    <input type="file" name="img" class="form-control" id="img" required></textarea>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-sm-12 text-center">
+                                    <button id="btn" name="btn" class="btn btn-outline-success" type="submit">Concluir</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

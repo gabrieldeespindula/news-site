@@ -50,7 +50,7 @@ $data = mysqli_fetch_array($result);
                     </div>
                     <div class="row mt-5">
                         <div class="col-sm-12  text-center">
-                            <button class="btn btn-outline-danger" data-toggle="modal" data-target="#modalCompartilhar" >Compartilhar</button>
+                            <button class="btn btn-outline-info" data-toggle="modal" data-target="#modalCompartilhar" >Compartilhar</button>
                         </div>
                     </div>
                 </div>
