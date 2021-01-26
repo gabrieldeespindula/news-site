@@ -1,3 +1,5 @@
-news site.
+Site de Notícias.
 
-vídeo mostrando site: https://www.youtube.com/watch?v=VStCOp9VGdc
+Vídeo mostrando primeira versão do site: https://youtu.be/VStCOp9VGdc
+
+Vídeo mostrando segunda versão do site(responsiva): https://youtu.be/pWfczcmlTAk
