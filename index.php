@@ -3,6 +3,9 @@
 // connection
 require_once 'database/dbconnectnews.php';
 
+// sessions
+session_start();
+
 $sql = "SELECT * FROM news ORDER BY Id DESC";
 $result = mysqli_query($connectnews, $sql);
 ?>
