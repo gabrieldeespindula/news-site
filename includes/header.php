@@ -1,10 +1,5 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbnews = "news";
-
 $connectusuario = mysqli_connect("localhost", "root", "", "logindb");
 
 // clear
@@ -19,15 +14,15 @@ function clear($input){
 
 if (isset($_POST['btncriar'])):
 
-    $nomec = clear($_POST['nomecriar']);
-    $emailc = clear($_POST['emailcriar']);
-    $senhac = password_hash(clear($_POST['senhacriar']), PASSWORD_DEFAULT);
+    $nomecriar = clear($_POST['nomecriar']);
+    $emailcriar = clear($_POST['emailcriar']);
+    $senhacriar = password_hash(clear($_POST['senhacriar']), PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nomec', '$emailc', '$senhac')";
-    if (mysqli_query($connectusuario, $sql)):
-        $result = mysqli_query($connectusuario, "SELECT id FROM usuarios ORDER BY id DESC");
-        $data = mysqli_fetch_array($result);      
-        $_SESSION['usuario'] = $data[0];
+    $sqlcriar = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nomec', '$emailc', '$senhac')";
+    if (mysqli_query($connectusuario, $sqlcriar)):
+        $resultcriar = mysqli_query($connectusuario, "SELECT id FROM usuarios ORDER BY id DESC");
+        $datacriar = mysqli_fetch_array($resultcriar);      
+        $_SESSION['usuario'] = $datacriar[0];
     endif;
     header('location: index.php');
 endif;
@@ -37,18 +32,18 @@ if (isset($_POST['btnentrar'])):
     $email = clear($_POST['email']);
     $senha = clear($_POST['senha']);
 
-    $sql = "SELECT email FROM usuarios WHERE email = '$email'";
-    $result = mysqli_query($connectusuario, $sql);
+    $sqlentrar = "SELECT email FROM usuarios WHERE email = '$email'";
+    $resultentrar = mysqli_query($connectusuario, $sqlentrar);
 
-    if(mysqli_num_rows($result) > 0):
-        $sql = "SELECT * FROM usuarios WHERE email = '$email'";
-        $result = mysqli_query($connectusuario, $sql);
-        $data = mysqli_fetch_array($result);
+    if(mysqli_num_rows($resultentrar) > 0):
+        $sqlentrar = "SELECT * FROM usuarios WHERE email = '$email'";
+        $resultentrar = mysqli_query($connectusuario, $sqlentrar);
+        $dataentrar = mysqli_fetch_array($resultentrar);
         mysqli_close($connectusuario);
 
 
-        if(password_verify($senha, $data['senha'])):
-            $_SESSION['usuario'] = $data['id'];
+        if(password_verify($senha, $dataentrar['senha'])):
+            $_SESSION['usuario'] = $dataentrar['id'];
             header('location: index.php');
         endif;
     endif;
@@ -80,12 +75,12 @@ endif;
                     <?php if(!isset($_SESSION['usuario'])): ?>
                     <button class="btn btn-light" data-toggle="modal" data-target="#modalEntrar" >Entrar</button>
                     <?php else: 
-                            $id = $_SESSION['usuario'];
-                            $sql = "SELECT * FROM usuarios WHERE id = '$id'";
-                            $result = mysqli_query($connectusuario, $sql);
-                            $data = mysqli_fetch_array($result); ?>
+                            $iduser = $_SESSION['usuario'];
+                            $sqluser = "SELECT * FROM usuarios WHERE id = '$iduser'";
+                            $resultuser = mysqli_query($connectusuario, $sqluser);
+                            $datauser = mysqli_fetch_array($resultuser); ?>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $data['nome']; ?></a>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $datauser['nome']; ?></a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownUser">
                             <a class="dropdown-item" href="./database/logout.php" >Sair</a>
                         </div>
