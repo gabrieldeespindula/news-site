@@ -34,7 +34,7 @@ mysqli_close($connectlogin);
         <script src="../node_modules/popper.js/dist/umd/popper.js"></script>
         <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
         <?php 
-        if (count($_SESSION) > 2): 
+        if (isset($_SESSION['msg'])): 
             if($_SESSION['msg'] != "0"):
         ?>
         <p> <?php echo $_SESSION['msg']; ?></p>
